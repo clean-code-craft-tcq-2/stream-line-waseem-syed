@@ -6,7 +6,7 @@ TEST_CASE("Test getSensorReadings and setSensorReadingsList")
    SensorReadings sensorReadings;
    int numberOfReadings = 50;
    sensorReadings.setSensorReadingsList(numberOfReadings);
-   std::vector<BatteryParameters> sensorReadingsOutputList = sensorReadings.getSensorReadings();
+   std::vector<BatteryParameters> sensorReadingsOutputList = sensorReadings.getSensorReadingsList();
    assert(sensorReadingsOutputList.size() == numberOfReadings);
 }
 

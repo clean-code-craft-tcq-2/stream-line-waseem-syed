@@ -17,9 +17,9 @@ void generateBatteryParameters(BatteryParameters& batteryParameters, int randomN
 
 private:
 std::vector<BatteryParameters> m_sensorReadingsList;
-}
+};
 
-std::vector<BatteryParameters> SensorReadings::getSensorReadings()const
+std::vector<BatteryParameters> SensorReadings::getSensorReadingsList()const
 {
    return m_sensorReadingsList;
 }
@@ -38,5 +38,5 @@ void SensorReadings::generateBatteryParameters(BatteryParameters& batteryParamet
 {
 	batteryParameters.m_temperature = randomNumber;
 	batteryParameters.m_currentStateOfCharge = randomNumber + 3;
-	batteryParameters.m_chargeRate = (float)m_chargeRate/10.0f;
+	batteryParameters.m_chargeRate = (float)randomNumber/10.0f;
 }
