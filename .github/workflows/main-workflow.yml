@@ -16,7 +16,7 @@ jobs:
         sudo apt-get install -y gcovr
 
     - name: build SensorReadings
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage TestSensorReadings.cpp -o SensorReadings
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage TestSensorReadings.h -o SensorReadings
 
     - name: run SensorReadings
       run: ./SensorReadings
