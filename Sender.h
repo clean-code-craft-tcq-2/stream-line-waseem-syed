@@ -1,4 +1,3 @@
-#pragma once
 #include "SensorReadings.h"
 #include <iostream>
 #include <vector>
@@ -26,10 +25,10 @@ void Sender::sensorReadingsListFromSensor(std::vector<BatteryParameters> battery
 
 void Sender::displaySensorDataOnConsole()
 {
-  cout<<"|Temperature|"<<"\t"<<"|current SOC|"<<"\t"<<"|ChargeRate|"<<endl;
+  std::cout<<"|Temperature|"<<"\t"<<"|current SOC|"<<"\t"<<"|ChargeRate|"<<std::endl;
   for(int index = 0; index < m_batteryParametersListFromSensor.size(); index++)
   {
-    cout<<m_batteryParametersListFromSensor[index].m_temperature<<"\t"<<m_batteryParametersListFromSensor[index].m_currentStateOfCharge<<"\t"<<m_batteryParametersListFromSensor[index].m_chargeRate<<endl;
+    std::cout<<m_batteryParametersListFromSensor[index].m_temperature<<"\t"<<m_batteryParametersListFromSensor[index].m_currentStateOfCharge<<"\t"<<m_batteryParametersListFromSensor[index].m_chargeRate<<std::endl;
   }
 }
 

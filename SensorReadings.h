@@ -9,6 +9,8 @@ struct BatteryParameters
   int   m_currentStateOfCharge;
 };
 
+class SensorReadings;
+
 class SensorData
 {
 public:
