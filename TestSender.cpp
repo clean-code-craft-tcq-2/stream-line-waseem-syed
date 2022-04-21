@@ -1,3 +1,4 @@
+#pragma once
 #include "test/catch.hpp"
 #include "Sender.h"
 
