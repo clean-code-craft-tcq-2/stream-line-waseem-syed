@@ -51,7 +51,6 @@ class SensorDataHandler
 public:
 void fillNewData(int numberOfReadings);
 void sendDataFromSensor();
-private:
 SensorReadings m_sensorReadings;
 };
 
