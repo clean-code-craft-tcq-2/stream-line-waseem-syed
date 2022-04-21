@@ -1,7 +1,6 @@
 #pragma once
 #include<vector>
 #include "Sender.h"
-#include "BatteryInfos.h"
 
 class SensorReadings;
 
