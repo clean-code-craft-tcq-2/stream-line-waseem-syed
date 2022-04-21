@@ -40,11 +40,19 @@ TEST_CASE("Test SensorDataHandler::fillNewData")
    assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 50);
 }
 
-TEST_CASE("Test SensorDataHandler::sendDataFromSensor")
+TEST_CASE("Test SensorDataHandler::sendDataFromSensor positive")
 {
    SensorDataHandler sensorDataHandler;
    int numberOfReadings = 50;
    sensorDataHandler.fillNewData(numberOfReadings);
+   assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 50);
+   sensorDataHandler.sendDataFromSensor();
+   assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 0);
+}
+
+TEST_CASE("Test SensorDataHandler::sendDataFromSensor negative")
+{
+   SensorDataHandler sensorDataHandler;
    sensorDataHandler.sendDataFromSensor();
    assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 0);
 }
