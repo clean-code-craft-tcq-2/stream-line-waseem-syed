@@ -2,27 +2,6 @@
 #include<vector>
 #include "Sender.h"
 
-class SensorReadings;
-
-class SensorData
-{
-public:
-void fillNewData(int numberOfReadings);
-void sendDataFromSensor();
-private:
-SensorReadings m_sensorReadings;
-};
-
-void SensorData::fillNewData(int numberOfReadings)
-{
-  m_sensorReadings.setSensorReadingsList(numberOfReadings);
-}
-
-void SensorData::sendDataFromSensor()
-{
-  m_sensorReadings.transferSensorDataToSender();
-}
-
 class SensorReadings
 {
 public:
@@ -65,4 +44,23 @@ void SensorReadings::transferSensorDataToSender()
       m_sender.sensorReadingsListFromSensor(m_sensorReadingsList);
       m_sensorReadingsList.clear();
    }
+}
+
+class SensorDataHandler
+{
+public:
+void fillNewData(int numberOfReadings);
+void sendDataFromSensor();
+private:
+SensorReadings m_sensorReadings;
+};
+
+void SensorDataHandler::fillNewData(int numberOfReadings)
+{
+  m_sensorReadings.setSensorReadingsList(numberOfReadings);
+}
+
+void SensorDataHandler::sendDataFromSensor()
+{
+  m_sensorReadings.transferSensorDataToSender();
 }
