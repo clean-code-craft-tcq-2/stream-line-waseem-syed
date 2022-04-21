@@ -37,7 +37,7 @@ TEST_CASE("Test SensorDataHandler::fillNewData")
    SensorDataHandler sensorDataHandler;
    int numberOfReadings = 50;
    sensorDataHandler.fillNewData(numberOfReadings);
-   assert(sensorDataHandler.m_sensorReadings().getSensorReadingsList().size() == 50);
+   assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 50);
 }
 
 TEST_CASE("Test SensorDataHandler::sendDataFromSensor")
@@ -46,7 +46,7 @@ TEST_CASE("Test SensorDataHandler::sendDataFromSensor")
    int numberOfReadings = 50;
    sensorDataHandler.fillNewData(numberOfReadings);
    sensorDataHandler.sendDataFromSensor();
-   assert(sensorDataHandler.m_sensorReadings().getSensorReadingsList().size() == 0);
+   assert(sensorDataHandler.m_sensorReadings.getSensorReadingsList().size() == 0);
 }
 
 std::vector<BatteryParameters> prepareBatteryParamList(int inputCount)
