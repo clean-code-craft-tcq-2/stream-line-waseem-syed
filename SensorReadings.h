@@ -1,13 +1,7 @@
 #pragma once
 #include<vector>
 #include "Sender.h"
-
-struct BatteryParameters
-{
-  float m_temperature;
-  float m_chargeRate;
-  int   m_currentStateOfCharge;
-};
+#include "BatteryInfos.h"
 
 class SensorReadings;
 
