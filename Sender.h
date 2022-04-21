@@ -1,3 +1,4 @@
+#pragma once
 #include "BatteryInfos.h"
 #include <iostream>
 #include <vector>
