@@ -17,7 +17,7 @@ class BatteryStatistics:
 
 def readandstore_senderdata_fromconsole():
     senderdata = sys.stdin.read()
-    parse_batteryparameters_fromconsoledata(senderdata)
+    return senderdata
 
 def parse_batteryparameters_fromconsoledata(senderdata):
     batteryparam_list = senderdata.split('\n')
@@ -48,11 +48,13 @@ def Compute_BatteryStatistics(index):
 def printoutputonconsole(BatteryStats):
     print ("Temperature Max :{}\tTemperature Min:{}\tSOC Max:{}\tSOC Min:{}\tChargeRate Max:{}\tChargeRate Min:{}\tTemperature MovingAverage:{}\tSOC MovingAverage:{}\tChargeRate MovingAverage:{}".format(BatteryStats.Temperature_Maximum, BatteryStats.Temperature_Minimum, BatteryStats.SOC_Maximum, BatteryStats.SOC_Minimum, BatteryStats.ChargeRate_Maximum, BatteryStats.ChargeRate_Minimum, BatteryStats.MovingAverage_Temperature_Maximum, BatteryStats.MovingAverage_SOC_Maximum, BatteryStats.MovingAverage_ChargeRate_Maximum))
 
-def process_data_from_sender():
+def process_data_from_sender(senderdata):
+    parse_batteryparameters_fromconsoledata(senderdata)
     for index in range(1,(len(Temperature_list)+1)):
         BatteryStats = Compute_BatteryStatistics(index)
         printoutputonconsole(BatteryStats)
+    return BatteryStats
        
 if __name__ == '__main__':
     senderdata = readandstore_senderdata_fromconsole()
-    process_data_from_sender()
+    process_data_from_sender(senderdata)
