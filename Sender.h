@@ -29,7 +29,7 @@ void Sender::displaySensorDataOnConsole()
   std::cout<<"|Temperature|"<<"\t"<<"|current SOC|"<<"\t"<<"|ChargeRate|"<<std::endl;
   for(int index = 0; index < m_batteryParametersListFromSensor.size(); index++)
   {
-    std::cout<<"\t"<<m_batteryParametersListFromSensor[index].m_temperature<<"\t\t"<<m_batteryParametersListFromSensor[index].m_currentStateOfCharge<<"\t\t"<<m_batteryParametersListFromSensor[index].m_chargeRate<<std::endl;
+    std::cout<<m_batteryParametersListFromSensor[index].m_temperature<<"\t\t"<<m_batteryParametersListFromSensor[index].m_currentStateOfCharge<<"\t\t"<<m_batteryParametersListFromSensor[index].m_chargeRate<<std::endl;
   }
 }
 
