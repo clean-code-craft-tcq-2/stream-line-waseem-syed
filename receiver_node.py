@@ -27,6 +27,7 @@ def parse_batteryparameters_fromconsoledata(senderdata):
         Temperature_list.append(split_list[0])
         SOC_list.append(split_list[1])
         ChargeRate_list.append(split_list[2])
+    return Temperature_list,SOC_list,ChargeRate_list
 
 def Compute_BatteryStatistics(index):
     BatteryStats = BatteryStatistics()
